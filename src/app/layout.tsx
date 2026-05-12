@@ -69,22 +69,6 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#000000" />
         <link rel="apple-touch-icon" href="/atori.svg" />
-        <script
-          src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js"
-          async
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.OneSignalDeferred = window.OneSignalDeferred || [];
-              OneSignalDeferred.push(async function(OneSignal) {
-                await OneSignal.init({
-                  appId: "${process.env.NEXT_PUBLIC_ONESIGNAL_APP_ID}",
-                });
-              });
-          `,
-          }}
-        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${geisHandCh.variable} antialiased`}
